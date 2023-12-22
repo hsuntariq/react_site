@@ -6,7 +6,10 @@ import { RxHamburgerMenu } from "react-icons/rx";
 import { IoMdClose } from "react-icons/io";
 
 import './nav.css'
+import { Link, useLocation } from 'react-router-dom';
 const Navbar = () => {
+    const location = useLocation()
+    console.log(location.pathname)
     const list = useRef();
     const ShowList = () => {
         list.current.style.transform = 'translateX(0)'
@@ -23,31 +26,39 @@ const Navbar = () => {
                     <CiCamera size={50} color='green' className='camera' />
                     <h1>PhotoFolio</h1>
                 </div>
-                <div className="items">
-                    <ul ref={list} className='menu list-unstyled text-uppercase d-flex gap-4 p-0 m-0 '>
-                        <li>Home</li>
-                        <li>about</li>
+                <div className="items ">
+                    <ul ref={list} className='menu d-flex justify-content-center align-items-center list-unstyled text-uppercase d-flex gap-4 p-0 m-0 '>
+                        <li className={`${location.pathname === '/' ? 'active' : ''}`}>
+                            <Link to={`/`} className='nav-link'>
+                                Home
+                            </Link>
+                        </li>
+                        <li className={`${location.pathname == '/about' ? 'active' : ''}`}>
+                            <Link to="/about" className='nav-link' >
+                                About
+                            </Link>
+                        </li>
                         <li className='d-flex align-items-center flex-column sub-parent '>
                             <div className="parent">gallery <RiArrowDropDownLine size={30} /></div>
                             <ul className='sub'>
-                                <li>Nature</li>
-                                <li>People</li>
-                                <li>Architecture</li>
-                                <li>Animals</li>
-                                <li>Sports</li>
-                                <li>Travel</li>
+                                <li className=''>Nature</li>
+                                <li className=''>People</li>
+                                <li className=''>Architecture</li>
+                                <li className=''>Animals</li>
+                                <li className=''>Sports</li>
+                                <li className=''>Travel</li>
                                 <li className='d-flex align-items-center  sub-parent2 '>
                                     <div className="parent2 align-items-center d-flex">Sub menu <RiArrowDropRightLine size={30} /></div>
                                     <ul className='sub2'>
-                                        <li>Nature</li>
-                                        <li>People</li>
-                                        <li>Architecture</li>
+                                        <li className={`${location.pathname == ''}`}>Nature</li>
+                                        <li className={`${location.pathname == ''}`}>People</li>
+                                        <li className={`${location.pathname == ''}`}>Architecture</li>
                                     </ul>
                                 </li>
                             </ul>
                         </li>
-                        <li>services</li>
-                        <li>contact</li>
+                        <li className={`${location.pathname == ''}`}>services</li>
+                        <li className={`${location.pathname == ''}`}>contact</li>
                         <IoMdClose onClick={closeList} size={20} className='close' />
                     </ul>
                 </div>

@@ -13,7 +13,7 @@ body{
     cursor: pointer;
     align-self: center;
     list-style: none;
-    color: white;
+    color: var(--bs-secondary);
     margin-bottom: 0.3rem;
 }
 
@@ -71,6 +71,10 @@ body{
     display: none;
 }
 
+
+.active{
+    color: white !important;
+}
 
 
 

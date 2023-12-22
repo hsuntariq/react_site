@@ -1,15 +1,21 @@
+import About from "./about/About"
 import ParentContainer from "./card/ParentContainer"
 import FrontPage from "./front/FrontPage"
+import Home from "./home/Home"
 import Navbar from "./navbar/Navbar"
-
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom"
 
 function App() {
 
   return (
     <>
-      <Navbar />
-      <FrontPage />
-      <ParentContainer />
+      <Router>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/about" element={<About />} />
+        </Routes>
+      </Router>
+
     </>
   )
 }

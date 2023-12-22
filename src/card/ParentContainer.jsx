@@ -6,7 +6,7 @@ import { card_data } from './card-data'
 const ParentContainer = () => {
     return (
         <>
-            < div className="row justify-content-center align-items-center">
+            < div className="row mx-auto container-fluid justify-content-center align-items-center">
                 {card_data.map((item) => {
                     return <Card {...item} />
 
