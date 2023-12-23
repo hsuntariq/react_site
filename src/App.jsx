@@ -1,5 +1,6 @@
 import About from "./about/About"
 import ParentContainer from "./card/ParentContainer"
+import Loader from "./components/Loader"
 import FrontPage from "./front/FrontPage"
 import Home from "./home/Home"
 import Navbar from "./navbar/Navbar"

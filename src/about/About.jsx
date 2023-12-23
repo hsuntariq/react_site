@@ -1,11 +1,22 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import Navbar from '../navbar/Navbar'
 import Button from '../components/Button'
 import AboutData from './AboutData'
 import Testemonials from './Testemonials'
 import Footer from '../footer/Footer'
+import Loader from '../components/Loader'
 
 const About = () => {
+    const [isLoading, setIsLoading] = useState(true);
+    useEffect(() => {
+        setTimeout(() => {
+            setIsLoading(false)
+        }, 2000)
+    }, [])
+
+    if (isLoading) {
+        return <Loader />
+    }
     return (
         <>
             <Navbar />

@@ -22,22 +22,24 @@ body{
 }
 
 .sub-parent:hover .sub{
-    opacity: 1;
+    /* opacity: 1; */
+    visibility: visible;
     transform: translateY(-20px);
+    transition: all 0.5s;
 }
 
 .sub{
-    transition: all 0.5s;
     background: rgb(62, 62, 62);
     position: absolute;
     top: 50px;
     left: 4px;
-    opacity: 0;
+    /* opacity: 0; */
+    visibility: hidden;
     padding: 1rem;
 }
 
 .show-sub{
-    opacity: 1;
+    visibility: visible;
 }
 
 
@@ -46,19 +48,22 @@ body{
 }
 
 .sub-parent2:hover .sub2{
-    opacity: 1;
+    visibility: visible;
+    /* opacity: 1; */
+    transition: all 0.5s;
+
 }
 
 
 
 
 .sub2{
-    transition: all 0.5s;
     top: 30%;
     background: rgb(62, 62, 62);
     position: absolute;
     right: -143%;
-    opacity: 0;
+    /* opacity: 0; */
+    visibility: hidden;
     padding: 1rem;
 }
 
